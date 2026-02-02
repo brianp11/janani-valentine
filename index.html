@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Janani 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      width: 340px;
+      position: relative;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .yes {
+      background: #ff4d88;
+      color: white;
+    }
+    .no {
+      background: #ddd;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <h1>💖 Janani, will you be my Valentine? 💖</h1>
+  <button class="yes" onclick="showInvite()">Yes 😍</button>
+  <button class="no" id="noBtn">No 🙈</button>
+</div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+
+  function moveButton() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  noBtn.addEventListener("mouseover", moveButton);
+  noBtn.addEventListener("click", moveButton);
+
+  function showInvite() {
+    document.body.innerHTML = `
+      <div class="card">
+        <h1>🎉 She said YES 🎉</h1>
+        <p>Janani 💖</p>
+        <p><strong>Pack your bags ✈️</strong></p>
+        <p>📅 <strong>Feb 11 – Feb 16</strong></p>
+        <p>✨ A surprise trip ✨</p>
+        <p style="margin-top:15px;">💍 This trip ends with forever 💍</p>
+        <p>I love you ❤️</p>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
 
